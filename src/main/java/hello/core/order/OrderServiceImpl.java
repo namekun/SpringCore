@@ -12,8 +12,8 @@ public class OrderServiceImpl implements OrderService {
     //    private final MemberRepository memberRepository= new MemoryMemberRepository();
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy; // DIP를 지키기 위해 인터페이스에만 의존하도록 변경
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy; // DIP를 지키기 위해 인터페이스에만 의존하도록 변경
 
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
