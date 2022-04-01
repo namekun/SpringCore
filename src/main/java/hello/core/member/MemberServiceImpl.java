@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
 //    private final MemberRepository memberRepository = new MemoryMemberRepository(); // 추상화(memberRepository) 와 구체와(MemoryMemberRepository)에 의존. - DIP 위반.
@@ -7,6 +11,7 @@ public class MemberServiceImpl implements MemberService {
     // DIP 위반을 해결하기 위한 생성자 주입.(의존성 주입)
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -19,5 +24,9 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }

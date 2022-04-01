@@ -1,7 +1,9 @@
-package hello.core.car.tank;
+package hello.core.carTest.tank;
 
-import hello.core.car.car.Energy;
+import hello.core.carTest.car.Energy;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GasolineOil implements FuelTank{
 
     @Override
@@ -11,4 +13,5 @@ public class GasolineOil implements FuelTank{
         energy.setEnergy(type);
         return energy;
     }
+
 }

@@ -1,4 +1,4 @@
-package hello.core.car.car;
+package hello.core.carTest.car;
 
 public interface Car {
     Energy runEngine();

@@ -1,7 +1,11 @@
-package hello.core.car.tank;
+package hello.core.carTest.tank;
 
-import hello.core.car.car.Energy;
+import hello.core.carTest.car.Energy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
+@Component
+@Primary
 public class ElectricBattery implements FuelTank {
 
     @Override
